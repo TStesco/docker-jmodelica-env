@@ -104,18 +104,20 @@ with the volumes mounted as configured in the Makefile.
 Use the command ```Make dev-notebook``` to start the container and expose a jupyter-notebook 
 server on port 8888 with jupyterlab, accessible at http://localhost:8888/lab.
 
-You can test the container has access to the key libraries:
+With the bash session you can test the container has access to the key libraries:
 ```sh
 python -c "import mpcpy, pymodelica, pyfmi, pyjmi"
 ```
+This should return no import errors.
 
 ## Notes on Docker
 
-All normal docker commands work with this setup as normal. 
+All normal docker commands work with this setup as normal. The Makefile is just 
+a script to make running specific commands with custom arguments easier. 
 
 For more information on Docker see: https://docs.docker.com/
-In general Docker containers can 
-be further customized after being built and ran, but the images will not be  
+
+In general Docker containers can be further customized after being built and ran, but the images will not be 
 updated. This means for example if you install any software or save a file that 
 is not in a mounted volume on a specific container instance, then stop the 
 container, you can restart it without losing anything. However, if you remove 
