@@ -96,10 +96,10 @@ dev:
 This would need to be repeated for dev-notebook if you want to use that command 
 to run your container.
 
-## Build container
+## Build container image
 
-Building the container can be done before figuring out your mounting scheme. 
-To build the container run:
+Building the container image can be done before figuring out your mounting scheme. 
+To build the container image run:
 
 ```sh
 Make build-trunk
@@ -119,7 +119,8 @@ With the bash session you can test the container has access to the key libraries
 ```sh
 python -c "import mpcpy, pymodelica, pyfmi, pyjmi"
 ```
-This should return no import errors, and you're all set up to start developing!
+This should return no import errors, and you're all set up to start developing!  
+note: Numpy warnings should be fine.
 
 If you want to add volumes for your source code add them in the Makefile and 
 they will be available in new containers started with it. 
