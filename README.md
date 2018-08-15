@@ -119,7 +119,12 @@ With the bash session you can test the container has access to the key libraries
 ```sh
 python -c "import mpcpy, pymodelica, pyfmi, pyjmi"
 ```
-This should return no import errors.
+This should return no import errors, and you're all set up to start developing!
+
+If you want to add volumes for your source code add them in the Makefile and 
+they will be available in new containers started with it. 
+To run your code use the bash session or use jupyterlab (notebooks or built-in 
+editor).
 
 ## Notes on Docker
 
