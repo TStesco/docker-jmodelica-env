@@ -4,8 +4,8 @@
 CONTAINER_NAME=jmodelica
 VERSION=0.0
 BUILD_PATH=/opt
-MPCPy_PATH=/home/tom/projects/MPCPy
-EstimationPy_PATH=/home/tom/projects/EstimationPy
+MPCPy_PATH=
+EstimationPy_PATH=
 MSL_PATH=$(BUILD_PATH)/JModelica/ThirdParty/MSL
 
 build-trunk: ## Creates an image based on trunk version of JModelica.

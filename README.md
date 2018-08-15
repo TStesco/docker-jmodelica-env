@@ -12,8 +12,7 @@ normal outside the container and they will be shared bidirectionally with the co
 ## Setup
 
 If you do not have Docker installed, 
-install it as per the official guide: https://docs.docker.com/install/
-
+install the community edition as per the official guide: https://docs.docker.com/install/  
 note: installing Docker requires root permissions
 
 The Makefile is a thin wrapper for Docker commands to manage the containers. 
@@ -32,9 +31,21 @@ git clone https://github.com/lbl-srg/EstimationPy.git
 ```
 
 There are a lot of environment variables, but you only need to configure these 
-two for your system for direct usage.
+two in the Makefile for your system.
 
-For example on my system the head of the Makefile is configured as such:
+```Dockerfile
+# Makefile to build JModelica development Docker image and manage containers.
+# Author: Tom Stesco <tom.stesco@gmaill.com>
+
+CONTAINER_NAME=jmodelica
+VERSION=0.7
+BUILD_PATH=/opt
+MPCPy_PATH=<add your system path here>
+EstimationPy_PATH=<add your system path here>
+MSL_PATH=$(BUILD_PATH)/JModelica/ThirdParty/MSL
+```
+
+For example my Makefile is configured as such:
 
 ```Dockerfile
 # Makefile to build JModelica development Docker image and manage containers.
